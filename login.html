@@ -8,6 +8,8 @@
     <!-- CSS Style Link -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
@@ -15,7 +17,7 @@
 </head>
 
 <body>
-   <header class="navbar">
+    <header class="navbar">
 
         <div class="logo_image">
             <a href="index.html" class="logo_text">
@@ -25,7 +27,7 @@
 
         <nav class="menu">
             <ul class="menu_list">
-                <li><a href="index.html" class="menu_links active">Home</a></li>
+                <li><a href="index.html" class="menu_links ">Home</a></li>
                 <li><a href="food.html" class="menu_links">Food</a></li>
                 <li><a href="about.html" class="menu_links">About</a></li>
                 <li><a href="contact.html" class="menu_links">Contact</a></li>
@@ -59,30 +61,85 @@
 
     </header>
 
-     <main>
-        <h1 class="login_title">Login Form</h1>
-
-        <form action="" class="login_container">
-            <input type="email" placeholder="Enter your email" id="" class="form_input">
-            <input type="password" placeholder="Enter your password" id="" class="form_input">
+    <main>
 
 
-            
-            <div class="check_box">
-                <input type="checkbox" id="rm">
-                <label for="rm"> Remember Me</label>
-                
+        <!-- ----------- Login----------  -->
+        <div class="container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+
+            <!-- LOGIN FORM -->
+            <div class="login-box main-login">
+
+                <h1>Login</h1>
+                <p>Welcome back! Please log in to access your account.</p>
+
+                <div class="row">
+                    <div class="input-box">
+                        <input type="email" placeholder="Enter your Email">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Enter your Password">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                </div>
+
+                <a href="#" class="forgot">Forgot Password?</a>
+
+                <button class="btn btn-login">Login</button>
+                <button type="button" class="btn btn-sign open-signup">Sign Up</button>
+
+                <div class="or">Or Continue with</div>
+
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-apple"></i></a>
+                </div>
+
             </div>
 
 
-            <button type="submit" class="btn">Login</button>
-            <div class="forget_register">
-                <a href="#">forget password?</a>
-                <a href="register.html">don't have an account</a>
-            </div>
-            
-        </form>
+            <!-- SIGN UP FORM -->
+            <div class="login-box signup-box" data-aos="fade-right" data-aos-duration="1000" style="display:none;">
 
+                <h1>Sign Up</h1>
+                <p>Create your account to get started.</p>
+
+                <div class="row">
+                    <div class="input-box">
+                        <input type="text" placeholder="Enter your Username">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="email" placeholder="Enter your Email">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Create Password">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Confirm Password">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                </div>
+
+                <button class="btn btn-login">Create Account</button>
+                <button type="button" class="btn btn-sign back-login">Back to Login</button>
+
+                <div class="or">Or Sign Up with</div>
+
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-apple"></i></a>
+                </div>
+
+            </div>
+
+        </div>
 
 
     </main>
@@ -113,8 +170,8 @@
                                 class="fa-solid fa-angle-right"></i> my cart</a></li>
                     <li class="footer_items"><a href="login.html" class="footer_links"><i
                                 class="fa-solid fa-angle-right"></i> login</a></li>
-                    <li class="footer_items"><a href="register.html" class="footer_links"><i
-                                class="fa-solid fa-angle-right"></i> register</a></li>
+                    <li class="footer_items"><a href="#signup-box" class="footer_links"><i
+                                class="fa-solid fa-angle-right"></i> Blog</a></li>
                 </ul>
             </div>
 
@@ -144,18 +201,66 @@
                 </ul>
             </div>
 
-            
+
         </div>
         <div class="footer_row">
-            <p>copyright@ April 2026 | Coding Artist by Wailynn</p>
+            <p>© April 2026 | Designed & Developed by Wailynn</p>
         </div>
 
 
 
     </footer>
 
+
+    <!-- MObile toggle -->
+    <script>
+        const toggleBtn = document.querySelector(".menu_toggle");
+        const menu = document.querySelector(".menu");
+
+        toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
+        toggleBtn.addEventListener("click", () => {
+
+            menu.classList.toggle("show_menu");
+
+            if (menu.classList.contains("show_menu")) {
+                toggleBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            } else {
+                toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+
+        });
+    </script>
+    <!-- -------------Login/Reg Js link--------- -->
+    <script>
+        const loginBox = document.querySelector(".main-login");
+        const signupBox = document.querySelector(".signup-box");
+
+        const signUpBtn = document.querySelector(".open-signup");
+        const backBtn = document.querySelector(".back-login");
+
+        signUpBtn.onclick = () => {
+            loginBox.style.display = "none";
+            signupBox.style.display = "block";
+        }
+
+        backBtn.onclick = () => {
+            signupBox.style.display = "none";
+            loginBox.style.display = "block";
+        }
+    </script>
+
+
+
     <!-- custom javascript link-------- -->
     <script src="script.js"></script>
+
+
+    <!-- ---------Aos---------- -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

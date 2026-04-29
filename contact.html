@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <title>Myanmar Mohinga</title>
 </head>
 
@@ -61,18 +63,53 @@
 
 
     <main>
-        <h1 class="page_title"><span style="font-weight: 500; text-transform: uppercase; letter-spacing: 2px;line-height: 2rem; color: #ff005d; font-size: larger;">Contact Our Support Team</span><br>Connect with us using below form, we will get back to you.</h1>
-        <form action="" class="form_container">
-            <div class="form_group">
-                <input type="text" placeholder="Enter Your Name" class="form_input">
-                <input type="email" placeholder="Enter Your Email" class="form_input">
+        <div class="container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+
+            <!-- Contact Us -->
+            <div class="login-box main-login">
+
+                <h1>Contact Us</h1>
+                <p style="line-height: 1.9rem;">Please any question or remark? Just write us to massage and we will
+                    reply back soonest.</p>
+
+                <div class="row">
+                    <div class="name_group" >
+                        <div class="input-box">
+                            <input type="text" placeholder="First Name">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder="Last Name">
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="email" placeholder="Enter your Email">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" placeholder="Enter your feedback">
+                    </div>
+
+                    <div class="input-box">
+                       <textarea name="" class="text-area">Write Massage...</textarea>
+                    </div>
+
+                </div>
+                
+                <button class="btn btn-login">Send Massage</button>
+                
+
+                <div class="or">We would like to hear from you.</div>
+
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
             </div>
-            <input type="text" placeholder="Enter Your Subject" class="form_input">
-
-            <textarea name="" placeholder="Enter Your Massage" class="form_input textarea" id=""></textarea>
-
-            <button type="submit" class="btn">Send Massage</button>
-        </form>
 
     </main>
 
@@ -102,8 +139,8 @@
                                 class="fa-solid fa-angle-right"></i> my cart</a></li>
                     <li class="footer_items"><a href="login.html" class="footer_links"><i
                                 class="fa-solid fa-angle-right"></i> login</a></li>
-                    <li class="footer_items"><a href="register.html" class="footer_links"><i
-                                class="fa-solid fa-angle-right"></i> register</a></li>
+                    <li class="footer_items"><a href="#signup-box" class="footer_links"><i
+                                class="fa-solid fa-angle-right"></i> Blog</a></li>
                 </ul>
             </div>
 
@@ -133,20 +170,26 @@
                 </ul>
             </div>
 
-            
+
         </div>
         <div class="footer_row">
-            <p>copyright@ April 2026 | Coding Artist by Wailynn</p>
+            <p>© April 2026 | Designed & Developed by Wailynn</p>
         </div>
 
 
 
     </footer>
 
+    <!-- ---------Aos---------- -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
     <!-- custom javascript link-------- -->
     <script src="script.js"></script>
 
-     <!-- MObile toggle -->
+    <!-- MObile toggle -->
     <script>
         const toggleBtn = document.querySelector(".menu_toggle");
         const menu = document.querySelector(".menu");
