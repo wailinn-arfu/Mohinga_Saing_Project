@@ -1390,10 +1390,9 @@ footer {
     background: #faf8f8;
     color: #8b8888;
     padding: 18px 22px;
-    font-size: 15px;
+    font-size: 1rem;
     border: 1px solid #eee;
     transition: .35s ease;
-    font-family: Arial, sans-serif;
 }
 
 .input-box .text-area:hover {
@@ -1404,7 +1403,14 @@ footer {
     border: 1px solid #ff005d;
     box-shadow: 0 0 15px rgba(255, 0, 93, .15);
 }
-
+@media(max-width:768px) {
+    .social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+    
+}
 
 
 /* --------------- Responsive Burger Toggle button */
